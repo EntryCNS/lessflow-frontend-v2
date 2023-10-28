@@ -1,8 +1,11 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
+import React from "react";
 
-const inter = Inter({ subsets: ["latin"] });
+const index = () => {
+  return (
+    <div>
+      <div>home</div>
+    </div>
+  );
+};
 
-export default function Home() {
-  return <div></div>;
-}
+export default index;
