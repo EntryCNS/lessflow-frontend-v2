@@ -20,9 +20,9 @@ const PlaceholderState = {
   active: css`
     color: ${({ theme }) => theme.Blue};
     font-size: 12px;
-    padding: 0px 15px;
+    padding: 5px 15px;
     margin-left: 24px;
-    margin-top: -4px;
+    margin-top: -9px;
     z-index: 1;
   `,
 };
@@ -40,11 +40,12 @@ export const Placeholder = styled.p<IPlaceholderProps>`
   position: absolute;
   background-color: white;
   z-index: -1;
-  transition: 0.2s;
+  transition: 0.1s;
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "16")}px;
   ${({ active }) => (active ? PlaceholderState.active : PlaceholderState.none)};
 `;
 
 export const Container = styled.div`
+  margin-top: 10px;
   position: relative;
 `;
