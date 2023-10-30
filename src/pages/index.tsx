@@ -1,10 +1,9 @@
+import Main from "@/components/main";
 import React from "react";
 
 const index = () => {
   return (
-    <div>
-      <div>home</div>
-    </div>
+    <Main/>
   );
 };
 

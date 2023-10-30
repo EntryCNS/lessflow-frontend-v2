@@ -1,4 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box
 }
+
+@import url('https://cdn.jsdelivr.net/gh/innks/NanumSquareRound@master/nanumsquareround.css');
