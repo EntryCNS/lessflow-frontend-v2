@@ -18,7 +18,7 @@ export const ModalLayout = styled.div`
 `
 
 export const ModalBox = styled.div`
-    padding: 1.5vw 3.5vw;
+    padding: 1.5vw 2vw 1.5vw 3.5vw ;
 
     width: 35vw;
     height: 50vw;
@@ -27,11 +27,11 @@ export const ModalBox = styled.div`
 `
 
 export const CancelBtnWrapper = styled.div`
-    width: calc(100% + 7%);
+    width: calc(100% + 3%);
 
     display: flex;
     justify-content: end;
-    align-items: center;
+    align-items: center;    
 `
 
 export const CancelBtnSvg = styled.svg`
@@ -56,6 +56,24 @@ export const MidTitle = styled.div`
     font-weight: 700;
 `
 
+export const MainContent = styled.div`
+    padding-right: 2vw;
+
+    width: 100%;
+    height: 60%;
+    
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar{
+        width: 10px;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: #7E82A6;
+        border-radius: 100px;
+    }
+
+`
+
 export const MainPic = styled(Image)`
     width: 100%;
     object-fit:cover
@@ -65,7 +83,6 @@ export const MainText = styled.div`
     margin-top: 1.5vw;
 
     width: 100%;
-    height: 30%;
 
     font-family: Inter;
     font-size: 0.8vw;
