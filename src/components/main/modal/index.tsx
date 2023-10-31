@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as S from "./style"
 import DummyImg1 from "../../../../public/asset/dummy/dummy1.svg"
 
 const Modal = ( {isOpen,setIsOpen} :any ) => {
-    console.log(isOpen)
 
-    
+    const [isText,setIsText] = useState<boolean>(true)
 
     const CONTENTDUMMY = '이재명 더불어민주당 대표가 경기도지사 재직 중 법인카드를 유용했다는 의혹을 제보한 전 경기도청 공무원 조명현 씨가 오늘 기자회견을 열고 자신의 신분을 공개했습니다.조 씨는 회견에서 이재명 대표 부부의 공금횡령과 법인카드 유용은 명백한 범죄행위라면서 잘못을 인정하고 책임을 다하라고 주장했습니다.조 씨는 "국정감사에 참고인 자격으로 출석하기로 예정되어 있었으나 무산되어 국정감사에서 하지 못한 이야기를 이 자리를 통해 하려고 마음먹고 나왔다"면서 "무엇이 두려워 제가 국정감사 참고인으로 나가는 것을 기필코 뒤엎어 무산시키는 것이냐"고 물었습니다.이재명 더불어민주당 대표가 경기도지사 재직 중 법인카드를 유용했다는 의혹을 제보한 전 경기도청 공무원 조명현 씨가 오늘 기자회견을 열고 자신의 신분을 공개했습니다.조 씨는 회견에서 이재명 대표 부부의 공금횡령과 법인카드 유용은 명백한 범죄행위라면서 잘못을 인정하고 책임을 다하라고 주장했습니다.조 씨는 "국정감사에 참고인 자격으로 출석하기로 예정되어 있었으나 무산되어 국정감사에서 하지 못한 이야기를 이 자리를 통해 하려고 마음먹고 나왔다"면서 "무엇이 두려워 제가 국정감사 참고인으로 나가는 것을 기필코 뒤엎어 무산시키는 것이냐"고 물었습니다.'
 
@@ -30,15 +29,33 @@ const Modal = ( {isOpen,setIsOpen} :any ) => {
                             이재명 법인카드 의혹 제보자 얼굴<br/>
                             공개 “이 대표 인정하고 사과해야“
                         </S.Title>
-                        <S.MidTitle>📰 단일 뉴스 기사 </S.MidTitle>
+
+                        <S.MidTitleWrapper>
+                            <S.MidTitle isText={isText}
+                                onClick={()=>{setIsText(true)}}
+                            >📰 단일 뉴스 기사 </S.MidTitle>
+                            <S.MidDevideLine/>
+                            <S.MidTitle isText={!isText}
+                                onClick={()=>{setIsText(false)}}
+                            >🎥  단일 뉴스  동영상</S.MidTitle>
+                        </S.MidTitleWrapper>
 
                         <S.MainContent>
-                            <S.MainPic src={DummyImg1}/>
-                        
-                            <S.MainText>{CONTENTDUMMY}</S.MainText>
+                            {
+                                isText &&
+                            <>
+                                    <S.MainPic src={DummyImg1}/>
+                                
+                                    <S.MainText>{CONTENTDUMMY}</S.MainText>
+
+                            </>    
+                            }
+
+                            {
+                                !isText &&
+                                <S.MainVideo width="560" height="315" src="https://www.youtube.com/embed/p5dPGjTMP88?si=ximamM24qzpY5X55" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen/>
+                            }
                         </S.MainContent>
-
-
                         <S.InfoBoxWrapper>
                             <S.InfoBox>
                                 <S.InfoSvg xmlns="http://www.w3.org/2000/svg" width="1vw" height="0.75vw" viewBox="0 0 20 15" fill="none">
