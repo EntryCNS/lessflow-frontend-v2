@@ -1,11 +1,12 @@
 import Image from "next/image";
 import styled from "styled-components";
+import { theme } from "@/styles/theme";
 
 export const MainLayout = styled.div`
     height: 100%;
     min-height: calc(100vh - 73px);
 
-    background-color: #F5F8FE;
+    background-color: ${theme.backgroundColor100};
 `
 
 export const HeaderPlace = styled.div`
@@ -98,3 +99,5 @@ export const NewsText = styled.div`
     bottom: 0;
     z-index: 1;
 `
+
+
