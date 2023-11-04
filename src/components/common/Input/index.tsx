@@ -4,6 +4,7 @@ import * as S from "./style";
 
 const Input = ({
   width,
+  padding,
   fontSize,
   borderRadius,
   placeholder,
@@ -27,7 +28,11 @@ const Input = ({
 
   return (
     <S.Container>
-      <S.Placeholder active={activePlaceholder} fontSize={fontSize}>
+      <S.Placeholder
+        active={activePlaceholder}
+        fontSize={fontSize}
+        margin={padding}
+      >
         {placeholder}
       </S.Placeholder>
       <S.Input
@@ -37,6 +42,7 @@ const Input = ({
         onFocus={() => setInputFocus(true)}
         onBlur={() => setInputFocus(false)}
         width={width}
+        padding={padding}
         border={activePlaceholder}
         borderRadius={borderRadius}
         {...props}

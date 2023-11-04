@@ -12,8 +12,6 @@ const Border = {
 
 const PlaceholderState = {
   none: css`
-    margin-left: 28px;
-    margin-top: 24px;
     padding: 0px;
     color: ${({ theme }) => theme.Placeholder};
   `,
@@ -28,19 +26,21 @@ const PlaceholderState = {
 };
 
 export const Input = styled.input<IInputStyle>`
-  padding: 24px 28px;
+  padding: ${({ padding }) => (padding ? padding : "24px 28px")};
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "16")}px;
   width: ${({ width }) => (width ? width : "400")}px;
   border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : "5")}px;
   ${({ border }) => (border ? Border.active : Border.none)};
   background-color: rgba(255, 255, 255, 0);
+  z-index: 100;
 `;
 
 export const Placeholder = styled.p<IPlaceholderProps>`
   position: absolute;
   background-color: white;
-  z-index: -1;
+  z-index: 99;
   transition: 0.1s;
+  margin: ${({ margin }) => (margin ? margin : "24px 28px")};
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "16")}px;
   ${({ active }) => (active ? PlaceholderState.active : PlaceholderState.none)};
 `;
