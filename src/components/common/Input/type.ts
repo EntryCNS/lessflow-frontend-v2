@@ -1,8 +1,9 @@
 import { Dispatch, InputHTMLAttributes, SetStateAction } from "react";
 
 export interface IInputStyle extends InputHTMLAttributes<HTMLInputElement> {
-  fontSize?: string | null;
-  borderRadius?: string | null;
+  padding?: string | null;
+  fontSize?: number | null;
+  borderRadius?: number | null;
   border?: boolean | null;
   width?: number;
 }
@@ -14,6 +15,7 @@ export interface IInputProps extends IInputStyle {
 }
 
 export interface IPlaceholderProps {
+  margin?: string | null;
   active: boolean;
-  fontSize?: string | null;
+  fontSize?: number | null;
 }
