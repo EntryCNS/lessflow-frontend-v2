@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import * as S from "./style";
-import MainTxtImg from "../../../public/asset/mainTxt.svg";
-import CharacterImg from "../../../public/asset/character.svg";
-import Button from "../common/Button";
+import MainTxtImg from "../../../../public/asset/mainTxt.svg";
+import CharacterImg from "../../../../public/asset/character.svg";
+import Button from "../../common/Button";
 import Modal from "./modal";
 
 const Main = () => {
