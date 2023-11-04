@@ -48,9 +48,25 @@ export const Title = styled.div`
     font-weight: 600;
 `
 
-export const MidTitle = styled.div`
+export const MidTitleWrapper = styled.div`
     margin-bottom: 0.6vw;
+    
+    display: flex;
+    align-items: center;
+`
 
+export const MidDevideLine = styled.div`
+    margin: 0 1vw;
+
+    width: 0.1vw;
+    height: 1.5vw;
+
+    background-color: ${theme.Gray100};
+`
+
+export const MidTitle = styled.div<{isText:boolean}>`
+
+    color: ${(props)=>props.isText ? "#000": theme.Gray100 };
     font-family: Pretendard;
     font-size: 1.2vw;
     font-weight: 700;
@@ -121,4 +137,8 @@ export const InfoBox = styled.div`
 
 export const InfoSvg = styled.svg`
 
+`
+
+export const MainVideo = styled.iframe`
+    width: 100%;
 `

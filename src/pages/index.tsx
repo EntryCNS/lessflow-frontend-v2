@@ -1,4 +1,4 @@
-import Main from "@/components/main";
+import Main from "@/components/layout/main";
 import React from "react";
 
 const index = () => {
