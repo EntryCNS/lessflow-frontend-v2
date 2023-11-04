@@ -13,7 +13,8 @@ const Button = ({
 }: IButtonProps) => {
   return (
     <S.Button
-      onClick={disable ? undefined : onClickHandler}
+      onClick={onClickHandler}
+      disable={disable}
       width={width}
       height={height}
       active={active}
