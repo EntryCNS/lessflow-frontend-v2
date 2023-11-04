@@ -6,7 +6,7 @@ const Border = {
     border: 1px solid ${({ theme }) => theme.Gray100};
   `,
   active: css`
-    border: 1px solid ${({ theme }) => theme.Blue};
+    border: 1px solid ${({ theme }) => theme.Blue300};
   `,
 };
 
@@ -18,7 +18,7 @@ const PlaceholderState = {
     color: ${({ theme }) => theme.Placeholder};
   `,
   active: css`
-    color: ${({ theme }) => theme.Blue};
+    color: ${({ theme }) => theme.Blue300};
     font-size: 12px;
     padding: 5px 15px;
     margin-left: 24px;

@@ -8,7 +8,7 @@ const Color = {
     background-color: ${({ theme }) => theme.Gray100};
   `,
   active: css`
-    background-color: ${({ theme }) => theme.Blue};
+    background-color: ${({ theme }) => theme.Blue300};
   `,
 };
 
