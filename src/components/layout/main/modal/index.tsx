@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import * as S from "./style"
-import DummyImg1 from "../../../../public/asset/dummy/dummy1.svg"
+import DummyImg1 from "../../../../../public/asset/dummy/dummy1.svg"
 
 const Modal = ( {isOpen,setIsOpen} :any ) => {
 
