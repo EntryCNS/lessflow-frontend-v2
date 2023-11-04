@@ -29,6 +29,7 @@ export const CheckBox = styled.div<ICheckBoxStyle>`
 
 export const Container = styled.div`
   display: inline-block;
+  cursor: pointer;
 `;
 export const SubContainer = styled.div`
   display: flex;
