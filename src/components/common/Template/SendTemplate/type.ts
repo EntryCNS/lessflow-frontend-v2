@@ -11,7 +11,7 @@ export type SendTemplateLeftContents = Record<SendTemplateUnion, string>;
 
 export interface ISendTemplateProps {
   leftContents: SendTemplateLeftContents;
-  children: ReactElement;
+  children: ReactElement | string;
   isSuccess: boolean;
   SuccessInfo: {
     title: string;
