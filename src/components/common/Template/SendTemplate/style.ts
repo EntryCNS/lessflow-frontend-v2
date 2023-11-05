@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled from "styled-components";
 
 export const MainContainer = styled.div`
@@ -27,4 +28,29 @@ export const RightContainer = styled.div`
   width: 50%;
   height: 100%;
   padding: 4rem;
+`;
+
+export const SuccessContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const EmailIcon = styled(Image)`
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+`;
+export const SuccessTitle = styled.p`
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: ${({ theme }) => theme.Normal};
+`;
+export const SuccessContext = styled.p`
+  font-size: 14px;
+  color: ${({ theme }) => theme.Gray300};
 `;
