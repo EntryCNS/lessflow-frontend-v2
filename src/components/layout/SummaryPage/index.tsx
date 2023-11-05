@@ -1,11 +1,12 @@
 import SendTemplate from "@/components/common/Template/SendTemplate";
 import { SendTemplateLeftContents } from "@/components/common/Template/SendTemplate/type";
 import SummaryImage from "@/../public/asset/keywordIcon.svg";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Input from "@/components/common/Input";
 import CheckBox from "@/components/common/CheckBox";
 import Button from "@/components/common/Button";
 import * as S from "./style";
+import { summaryCheckHandler } from "@/util/summaryCheckHandler";
 
 const LeftContents: SendTemplateLeftContents = {
   title: "뉴스를 요약해보세요!",
@@ -15,6 +16,11 @@ const LeftContents: SendTemplateLeftContents = {
   context: "요약된 뉴스를 이메일로?",
 };
 
+const SuccessInfo = {
+  title: "이메일로 전송되었습니다 ",
+  context: "생성 단일 뉴스를 이메일에서 확인하실 수 있습니다",
+};
+
 const SummaryPage = () => {
   const [email, setEmail] = useState<string>("");
   const [keyword, setKeyword] = useState<string>("");
@@ -22,11 +28,23 @@ const SummaryPage = () => {
   const [sendEmail, setSendEmail] = useState<boolean>(false);
   const [active, setActive] = useState<boolean>(false);
 
-  const onclickHandler = () => {};
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
+
+  const onclickHandler = () => {
+    setIsSuccess(true);
+  };
+
+  useEffect(() => {
+    setActive(summaryCheckHandler({ email, keyword, TTSService, sendEmail }));
+  }, [email, keyword, TTSService, sendEmail]);
 
   return (
     <>
-      <SendTemplate leftContents={LeftContents}>
+      <SendTemplate
+        leftContents={LeftContents}
+        isSuccess={isSuccess}
+        SuccessInfo={SuccessInfo}
+      >
         <div>
           <S.InputWrap>
             <S.InputTitle>📨 뉴스 전송 이메일</S.InputTitle>
