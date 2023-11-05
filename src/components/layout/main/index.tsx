@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import * as S from "./style";
-import MainTxtImg from "../../../../public/asset/mainTxt.svg";
+import MainTxtImg from "@/../public/asset/mainTxt.svg";
 import CharacterImg from "../../../../public/asset/character.svg";
 import Button from "../../common/Button";
 import Modal from "./modal";
@@ -21,9 +21,9 @@ const Main = () => {
       <S.HeaderPlace />
 
       <S.MainBannerBox>
-        <S.MainTxtImg src={MainTxtImg} />
+        <S.MainTxtImg src={MainTxtImg} alt="" />
 
-        <S.MainCharacterImg src={CharacterImg} />
+        <S.MainCharacterImg src={CharacterImg} alt="" />
       </S.MainBannerBox>
 
       <S.MainContentBox>

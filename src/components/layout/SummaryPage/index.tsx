@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import Input from "@/components/common/Input";
 import CheckBox from "@/components/common/CheckBox";
 import Button from "@/components/common/Button";
+import * as S from "./style";
 
 const LeftContents: SendTemplateLeftContents = {
   title: "뉴스를 요약해보세요!",
@@ -27,8 +28,8 @@ const SummaryPage = () => {
     <>
       <SendTemplate leftContents={LeftContents}>
         <div>
-          <div>
-            <p>뉴스 전솓 이메일</p>
+          <S.InputWrap>
+            <S.InputTitle>📨 뉴스 전송 이메일</S.InputTitle>
             <Input
               state={email}
               setState={setEmail}
@@ -36,9 +37,9 @@ const SummaryPage = () => {
               fontSize={18}
               padding="22px 20px"
             />
-          </div>
-          <div>
-            <p>뉴스 생성 키워드</p>
+          </S.InputWrap>
+          <S.InputWrap>
+            <S.InputTitle>📰 뉴스 생성 키워드</S.InputTitle>
             <Input
               state={keyword}
               setState={setKeyword}
@@ -46,28 +47,30 @@ const SummaryPage = () => {
               fontSize={18}
               padding="22px 20px"
             />
-          </div>
-          <div>
+          </S.InputWrap>
+          <S.CheckBoxWrap>
             <CheckBox
               context="TTS 서비스를 이용하시겠습니까?"
               state={TTSService}
               setState={setTTSService}
             />
-          </div>
-          <div>
+          </S.CheckBoxWrap>
+          <S.CheckBoxWrap>
             <CheckBox
-              context="이메일 수신에 동의합니다.?"
+              context="이메일 수신에 동의합니다."
               state={sendEmail}
               setState={setSendEmail}
             />
-          </div>
-          <Button
-            onClickHandler={onclickHandler}
-            disable={!active}
-            active={active}
-          >
-            단일 뉴스 생성
-          </Button>
+          </S.CheckBoxWrap>
+          <S.ButtonWrap>
+            <Button
+              onClickHandler={onclickHandler}
+              disable={!active}
+              active={active}
+            >
+              단일 뉴스 생성
+            </Button>
+          </S.ButtonWrap>
         </div>
       </SendTemplate>
     </>
