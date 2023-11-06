@@ -3,7 +3,7 @@ import { IButtonProps } from "./type";
 import * as S from "./style";
 
 const Button = ({
-  onClickHandler,
+  onClick,
   disable,
   children,
   width,
@@ -13,7 +13,7 @@ const Button = ({
 }: IButtonProps) => {
   return (
     <S.Button
-      onClick={onClickHandler}
+      onClick={onClick}
       disable={disable}
       width={width}
       height={height}
