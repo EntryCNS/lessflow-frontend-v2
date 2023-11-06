@@ -6,8 +6,8 @@ export const InlineBox = styled.div`
 
 export const MainContainer = styled.div`
   position: relative;
-  width: 250px;
-  height: 350px;
+  width: 200px;
+  height: 300px;
   border-radius: 15px;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -28,10 +28,4 @@ export const TitleBox = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-export const ContentsWrap = styled.div`
-  width: 70vh;
-  display: flex;
-  justify-content: space-between;
 `;
