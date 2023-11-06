@@ -4,6 +4,7 @@ import MainTxtImg from "@/../public/asset/mainTxt.svg";
 import CharacterImg from "../../../../public/asset/character.svg";
 import Button from "../../common/Button";
 import Modal from "./modal";
+import DefaultTemplate from "@/components/common/Template/DefaultTemplate";
 
 const Main = () => {
   const NEWSTITLELIST = [
@@ -17,41 +18,43 @@ const Main = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <S.MainLayout>
-      <S.HeaderPlace />
+    <DefaultTemplate>
+      <S.MainLayout>
+        <S.HeaderPlace />
 
-      <S.MainBannerBox>
-        <S.MainTxtImg src={MainTxtImg} alt="" />
+        <S.MainBannerBox>
+          <S.MainTxtImg src={MainTxtImg} alt="" />
 
-        <S.MainCharacterImg src={CharacterImg} alt="" />
-      </S.MainBannerBox>
+          <S.MainCharacterImg src={CharacterImg} alt="" />
+        </S.MainBannerBox>
 
-      <S.MainContentBox>
-        <Button
-          onClickHandler={() => {}}
-          disable={false}
-          active={true}
-          children={"인기 뉴스"}
-        ></Button>
+        <S.MainContentBox>
+          <Button
+            onClickHandler={() => {}}
+            disable={false}
+            active={true}
+            children={"인기 뉴스"}
+          ></Button>
 
-        <S.NewsWrapper>
-          {NEWSTITLELIST.map((title, idx) => (
-            <S.NewsBox
-              key={idx}
-              onClick={() => {
-                setIsOpen(true);
-              }}
-            >
-              {/*<S.NewsBoxImg />*/}
+          <S.NewsWrapper>
+            {NEWSTITLELIST.map((title, idx) => (
+              <S.NewsBox
+                key={idx}
+                onClick={() => {
+                  setIsOpen(true);
+                }}
+              >
+                {/*<S.NewsBoxImg />*/}
 
-              <S.NewsText>{title}</S.NewsText>
-            </S.NewsBox>
-          ))}
-        </S.NewsWrapper>
+                <S.NewsText>{title}</S.NewsText>
+              </S.NewsBox>
+            ))}
+          </S.NewsWrapper>
 
-        <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
-      </S.MainContentBox>
-    </S.MainLayout>
+          <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
+        </S.MainContentBox>
+      </S.MainLayout>
+    </DefaultTemplate>
   );
 };
 
