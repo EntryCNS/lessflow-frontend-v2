@@ -7,6 +7,7 @@ import CheckBox from "@/components/common/CheckBox";
 import Button from "@/components/common/Button";
 import * as S from "./style";
 import { summaryCheckHandler } from "@/util/summaryCheckHandler";
+import { sendCreateArticle } from "@/util/apis/SummaryApis";
 
 const LeftContents: SendTemplateLeftContents = {
   title: "뉴스를 요약해보세요!",
@@ -31,7 +32,14 @@ const SummaryPage = () => {
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
   const onclickHandler = () => {
-    setIsSuccess(true);
+    sendCreateArticle({ email, keyword })
+      .then((e) => {
+        console.log(e);
+        setIsSuccess(true);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   };
 
   useEffect(() => {
@@ -81,11 +89,7 @@ const SummaryPage = () => {
             />
           </S.CheckBoxWrap>
           <S.ButtonWrap>
-            <Button
-              onClickHandler={onclickHandler}
-              disable={!active}
-              active={active}
-            >
+            <Button onClick={onclickHandler} disable={!active} active={active}>
               단일 뉴스 생성
             </Button>
           </S.ButtonWrap>
