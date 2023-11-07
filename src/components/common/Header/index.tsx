@@ -9,17 +9,17 @@ interface IHandlerProps {
 
 const Header = () => {
   const router = useRouter();
-  const [pageIdx, setPageIdx] = useState<number>(1);
+  const [pageIdx, setPageIdx] = useState<number>(0);
   const OnClickHandler = ({ path }: IHandlerProps) => {
     router.push(path);
   };
 
   useEffect(() => {
     switch (router.pathname) {
-      case "/entire":
+      case "/":
         setPageIdx(0);
         break;
-      case "/":
+      case "/entire":
         setPageIdx(1);
         break;
       case "/summary":
@@ -33,19 +33,19 @@ const Header = () => {
 
   return (
     <S.HeaderContainer>
-      <S.LogoImage src={Logo} alt="" />
+      <S.LogoImage src={Logo} alt="image error" />
       <S.ContentsWrap>
         <S.ContentsContext
           isActive={pageIdx === 0}
-          onClick={() => OnClickHandler({ path: "/entire" })}
+          onClick={() => OnClickHandler({ path: "/" })}
         >
-          전체뉴스보기
+          인기뉴스보기
         </S.ContentsContext>
         <S.ContentsContext
           isActive={pageIdx === 1}
-          onClick={() => OnClickHandler({ path: "/" })}
+          onClick={() => OnClickHandler({ path: "/entire" })}
         >
-          뉴스상세보기
+          전체뉴스보기
         </S.ContentsContext>
         <S.ContentsContext
           isActive={pageIdx === 2}
