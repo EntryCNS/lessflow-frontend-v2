@@ -1,12 +1,39 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as S from "./style"
 import DummyImg1 from "../../../../../public/asset/dummy/dummy1.svg"
+import axios from 'axios';
+import { articleType } from '../type';
 
-const Modal = ( {isOpen,setIsOpen} :any ) => {
+const Modal = ( {
+    isOpen,setIsOpen,articleNum
+} :any ) => {
 
+    const [videoUrl,setVideoUrl] = useState<string>()
+    const [writingPainting, setWritingPainting] = useState<articleType>()
     const [isText,setIsText] = useState<boolean>(true)
 
     const CONTENTDUMMY = '이재명 더불어민주당 대표가 경기도지사 재직 중 법인카드를 유용했다는 의혹을 제보한 전 경기도청 공무원 조명현 씨가 오늘 기자회견을 열고 자신의 신분을 공개했습니다.조 씨는 회견에서 이재명 대표 부부의 공금횡령과 법인카드 유용은 명백한 범죄행위라면서 잘못을 인정하고 책임을 다하라고 주장했습니다.조 씨는 "국정감사에 참고인 자격으로 출석하기로 예정되어 있었으나 무산되어 국정감사에서 하지 못한 이야기를 이 자리를 통해 하려고 마음먹고 나왔다"면서 "무엇이 두려워 제가 국정감사 참고인으로 나가는 것을 기필코 뒤엎어 무산시키는 것이냐"고 물었습니다.이재명 더불어민주당 대표가 경기도지사 재직 중 법인카드를 유용했다는 의혹을 제보한 전 경기도청 공무원 조명현 씨가 오늘 기자회견을 열고 자신의 신분을 공개했습니다.조 씨는 회견에서 이재명 대표 부부의 공금횡령과 법인카드 유용은 명백한 범죄행위라면서 잘못을 인정하고 책임을 다하라고 주장했습니다.조 씨는 "국정감사에 참고인 자격으로 출석하기로 예정되어 있었으나 무산되어 국정감사에서 하지 못한 이야기를 이 자리를 통해 하려고 마음먹고 나왔다"면서 "무엇이 두려워 제가 국정감사 참고인으로 나가는 것을 기필코 뒤엎어 무산시키는 것이냐"고 물었습니다.'
+
+    console.log(articleNum)
+
+    useEffect(()=>{
+        axios.get(`http://43.202.215.8:8080/article/video/${articleNum}`)
+        .then((res)=>{
+            setVideoUrl(res.data.video)
+        })
+        .catch(()=>{
+    
+        })
+
+        axios.get(`http://43.202.215.8:8080/article/${articleNum}`)
+        .then((res)=>{
+            // setVideoUrl(res.data.video)
+            setWritingPainting(res.data.article)
+        })
+        .catch(()=>{
+    
+        })
+    },[articleNum])
 
     return (
         <>
@@ -26,8 +53,7 @@ const Modal = ( {isOpen,setIsOpen} :any ) => {
                         </S.CancelBtnWrapper>
 
                         <S.Title>
-                            이재명 법인카드 의혹 제보자 얼굴<br/>
-                            공개 “이 대표 인정하고 사과해야“
+                            {writingPainting?.title}
                         </S.Title>
 
                         <S.MidTitleWrapper>
@@ -44,16 +70,16 @@ const Modal = ( {isOpen,setIsOpen} :any ) => {
                             {
                                 isText &&
                             <>
-                                    <S.MainPic src={DummyImg1}/>
+                                    <S.MainPic src={writingPainting?.thumbnail}/>
                                 
-                                    <S.MainText>{CONTENTDUMMY}</S.MainText>
+                                    <S.MainText>{writingPainting?.content}</S.MainText>
 
                             </>    
                             }
 
                             {
                                 !isText &&
-                                <S.MainVideo width="560" height="315" src="https://www.youtube.com/embed/p5dPGjTMP88?si=ximamM24qzpY5X55" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen/>
+                                <S.MainVideo width="100%" height="99%" src={videoUrl} title="news video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen/>
                             }
                         </S.MainContent>
                         <S.InfoBoxWrapper>
