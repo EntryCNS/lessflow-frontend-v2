@@ -52,20 +52,23 @@ export const MainContentBox = styled.div`
 `;
 
 export const NewsWrapper = styled.div`
-  width: 100%;
+    padding: 1.9vw 0;
+
+    width: 100%;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 `;
 
-export const NewsBox = styled.div`
-  margin: 1.9vw 0;
+/* export const NewsBox = styled.div`
+    margin: 1.9vw 0;
 
   width: 16.3vw;
   height: 23.2vw;
 
   position: relative;
-`;
+`; */
 
 export const NewsBoxImg = styled.img`
   width: inherit;

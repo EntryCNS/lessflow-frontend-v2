@@ -2,14 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'assets.example.com',
-        port: '',
-        pathname: '/account123/**',
-      },
-    ],
+    domains:[
+      'dimg.donga.com',
+      'd2k5miyk6y5zf0.cloudfront.net',
+      'img.vogue.co.kr',
+      'img.sbs.co.kr'
+  ]
   },
 }
 
