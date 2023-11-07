@@ -30,3 +30,9 @@ export const TitleBox = styled.p`
   justify-content: center;
   align-items: center;
 `;
+
+export const Image = styled.img`
+  width: 400px;
+  height: 400px;
+  background-size: cover;
+`;

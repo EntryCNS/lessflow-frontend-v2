@@ -1,13 +1,12 @@
 import React from "react";
 import * as S from "./style";
 import { INewsBoxProps } from "./type";
-import Image from "next/image";
 
-const NewsBox = ({ keyword, thumbnail, id }: INewsBoxProps) => {
+const NewsBox = ({ keyword, thumbnail, onClick }: INewsBoxProps) => {
   return (
-    <S.InlineBox>
+    <S.InlineBox onClick={onClick}>
       <S.MainContainer>
-        {thumbnail && <Image src={thumbnail} alt="" width={400} height={400} />}
+        {thumbnail && <S.Image src={thumbnail} alt="" />}
         <S.TitleBox>{keyword}</S.TitleBox>
       </S.MainContainer>
     </S.InlineBox>
