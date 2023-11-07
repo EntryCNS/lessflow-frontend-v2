@@ -6,6 +6,6 @@ interface IProps {
 }
 
 export const sendCreateArticle = ({ email, keyword }: IProps) => {
-  const response = API.post("/article/create", { email, keyword });
+  const response = API.post("/article/", { email, keyword });
   return response;
 };
