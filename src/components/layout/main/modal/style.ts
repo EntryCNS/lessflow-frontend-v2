@@ -90,7 +90,7 @@ export const MainContent = styled.div`
 
 `
 
-export const MainPic = styled(Image)`
+export const MainPic = styled.img`
     width: 100%;
     object-fit:cover
 `
@@ -140,5 +140,5 @@ export const InfoSvg = styled.svg`
 `
 
 export const MainVideo = styled.iframe`
-    width: 100%;
+
 `

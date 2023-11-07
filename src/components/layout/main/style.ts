@@ -52,8 +52,6 @@ export const MainContentBox = styled.div`
 `
 
 export const NewsWrapper = styled.div`
-    padding: 1.9vw 0;
-
     width: 100%;
 
     display: flex;
@@ -62,7 +60,7 @@ export const NewsWrapper = styled.div`
 `
 
 export const NewsBox = styled.div`
-    // margin: 0 2.9vw;
+    margin: 1.9vw 0;
 
     width: 16.3vw;
     height: 23.2vw;
@@ -70,10 +68,12 @@ export const NewsBox = styled.div`
     position: relative;
 `
 
-export const NewsBoxImg = styled(Image)`
+export const NewsBoxImg = styled.img`
     width: inherit;
     height: inherit;
     border-radius: 15px;
+
+    object-fit: cover;
 
     position: absolute;
 `
