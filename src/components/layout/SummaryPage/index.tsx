@@ -8,6 +8,8 @@ import Button from "@/components/common/Button";
 import * as S from "./style";
 import { summaryCheckHandler } from "@/util/summaryCheckHandler";
 import { sendCreateArticle } from "@/util/apis/SummaryApis";
+import { useSetRecoilState } from "recoil";
+import { loadingAtom } from "@/store/loadingAtom";
 
 const LeftContents: SendTemplateLeftContents = {
   title: "뉴스를 요약해보세요!",
@@ -31,10 +33,14 @@ const SummaryPage = () => {
 
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
+  const setLoading = useSetRecoilState(loadingAtom);
+
   const onclickHandler = () => {
+    setLoading(true);
     sendCreateArticle({ email, keyword })
       .then((e) => {
         console.log(e);
+        setLoading(false);
         setIsSuccess(true);
       })
       .catch((e) => {
