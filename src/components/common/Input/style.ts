@@ -28,7 +28,7 @@ const PlaceholderState = {
 export const Input = styled.input<IInputStyle>`
   padding: ${({ padding }) => (padding ? padding : "24px 28px")};
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "16")}px;
-  width: ${({ width }) => (width ? width : "400")}px;
+  width: ${({ width }) => (width ? width + "px" : "100%")};
   border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : "5")}px;
   ${({ border }) => (border ? Border.active : Border.none)};
   background-color: rgba(255, 255, 255, 0);

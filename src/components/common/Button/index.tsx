@@ -4,17 +4,16 @@ import * as S from "./style";
 
 const Button = ({
   onClick,
-  disable,
   children,
   width,
+  disable,
   height,
   active,
   ...props
 }: IButtonProps) => {
   return (
     <S.Button
-      onClick={onClick}
-      disable={disable}
+      onClick={!disable ? onClick : () => {}}
       width={width}
       height={height}
       active={active}
