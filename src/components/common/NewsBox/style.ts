@@ -5,6 +5,7 @@ export const InlineBox = styled.div`
 `;
 
 export const MainContainer = styled.div`
+  background-color: ${({ theme }) => theme.backgroundColor300};
   position: relative;
   width: 200px;
   height: 300px;
