@@ -1,7 +1,7 @@
 import * as S from "./style";
 import React, { useEffect, useState } from "react";
 import { useSetRecoilState } from "recoil";
-import SubscribeImage from "@/../public/asset/bookIcon.svg";
+import SubscribeImage from "@/../public/asset/subscribeIcon.svg";
 import Input from "@/components/common/Input";
 import CheckBox from "@/components/common/CheckBox";
 import Button from "@/components/common/Button";
