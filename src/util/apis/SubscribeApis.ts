@@ -5,6 +5,6 @@ interface IProps {
 }
 
 export const sendSubscribeEmail = ({ email }: IProps) => {
-  const response = API.post("/article/", { email });
+  const response = API.post("/subscribe", { email });
   return response;
 };
