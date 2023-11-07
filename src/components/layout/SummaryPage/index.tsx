@@ -37,6 +37,7 @@ const SummaryPage = () => {
 
   const onclickHandler = () => {
     setLoading(true);
+
     sendCreateArticle({ email, keyword })
       .then((e) => {
         console.log(e);
@@ -58,7 +59,7 @@ const SummaryPage = () => {
       isSuccess={isSuccess}
       SuccessInfo={SuccessInfo}
     >
-      <div>
+      <S.RightContainer>
         <S.InputWrap>
           <S.InputTitle>📨 뉴스 전송 이메일</S.InputTitle>
           <Input
@@ -98,7 +99,7 @@ const SummaryPage = () => {
             단일 뉴스 생성
           </Button>
         </S.ButtonWrap>
-      </div>
+      </S.RightContainer>
     </SendTemplate>
   );
 };
