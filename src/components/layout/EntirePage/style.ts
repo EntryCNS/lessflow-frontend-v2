@@ -6,12 +6,12 @@ export const NewsBoxWrap = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
+  overflow: auto;
 `;
 
 export const NewsContentsWrap = styled.div`
   padding-bottom: 5rem;
   width: 65%;
-  overflow: auto;
 `;
 
 export const MainContainer = styled.div`
