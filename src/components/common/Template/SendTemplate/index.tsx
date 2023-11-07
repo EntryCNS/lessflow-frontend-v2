@@ -4,6 +4,9 @@ import { ISendTemplateProps } from "./type";
 import LeftContents from "./LeftContents";
 import EmailIcon from "@/../public/asset/emailIcon.svg";
 import Header from "../../Header";
+import { useRecoilValue } from "recoil";
+import { loadingAtom } from "@/store/loadingAtom";
+import Loading from "../../Loading";
 
 const SendTemplate = ({
   leftContents,
@@ -11,9 +14,11 @@ const SendTemplate = ({
   isSuccess,
   SuccessInfo,
 }: ISendTemplateProps) => {
+  const isLoading = useRecoilValue(loadingAtom);
   return (
     <S.MainContainer>
       <Header />
+      {isLoading && <Loading />}
       <S.SubContainer>
         <LeftContents
           subTitle={leftContents.subTitle}

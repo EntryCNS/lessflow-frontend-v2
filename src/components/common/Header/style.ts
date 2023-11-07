@@ -41,6 +41,7 @@ export const ContentsWrap = styled.div`
 export const ContentsContext = styled.p<IContextProps>`
   font-size: 16px;
   font-weight: 700;
+  cursor: pointer;
   ${({ isActive }) =>
     isActive ? isPageActiveContext.active : isPageActiveContext.none}
   &:hover {

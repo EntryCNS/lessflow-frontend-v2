@@ -15,11 +15,6 @@ export const summaryCheckHandler: ({}: IProps) => boolean = ({
   TTSService,
   sendEmail,
 }: IProps) => {
-  console.log(
-    EmailRegExp.test(email),
-    keyword.replace(KeywordRegExp, "") !== ""
-  );
-
   if (
     TTSService &&
     sendEmail &&

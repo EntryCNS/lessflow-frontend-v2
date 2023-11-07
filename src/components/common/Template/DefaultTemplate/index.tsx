@@ -2,11 +2,15 @@ import React, { ReactElement } from "react";
 import * as S from "./style";
 import Header from "../../Header";
 
-const DefaultTemplate = ({children}: ReactElement | any) => {
+interface IDefaultTemplateProps {
+  children: ReactElement;
+}
+
+const DefaultTemplate = ({ children }: IDefaultTemplateProps) => {
   return (
     <S.DefaultTemplate>
       <Header />
-      {children}
+      <>{children}</>
     </S.DefaultTemplate>
   );
 };

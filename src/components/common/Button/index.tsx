@@ -3,18 +3,17 @@ import { IButtonProps } from "./type";
 import * as S from "./style";
 
 const Button = ({
-  onClickHandler,
-  disable,
+  onClick,
   children,
   width,
+  disable,
   height,
   active,
   ...props
 }: IButtonProps) => {
   return (
     <S.Button
-      onClick={onClickHandler}
-      disable={disable}
+      onClick={!disable ? onClick : () => {}}
       width={width}
       height={height}
       active={active}
