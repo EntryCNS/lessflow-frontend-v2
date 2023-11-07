@@ -1,8 +1,8 @@
 import React from "react";
 import SummaryPage from "@/components/layout/SummaryPage";
 
-const send = () => {
+const summary = () => {
   return <SummaryPage />;
 };
 
-export default send;
+export default summary;

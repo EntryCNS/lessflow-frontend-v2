@@ -1,8 +1,8 @@
-import Main from "@/components/layout/main";
+import MainPage from "@/components/layout/main";
 import React from "react";
 
-const index = () => {
-  return <Main />;
+const main = () => {
+  return <MainPage />;
 };
 
-export default index;
+export default main;
