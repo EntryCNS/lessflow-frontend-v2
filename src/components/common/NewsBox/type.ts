@@ -1,4 +1,5 @@
 export interface INewsBoxProps {
-  title: string;
-  image: string;
+  keyword: string;
+  thumbnail?: string;
+  id: string;
 }
