@@ -6,6 +6,7 @@ import * as S from "./style";
 import { getArticleList } from "@/util/apis/EntireApis";
 import { INewsBoxProps } from "@/components/common/NewsBox/type";
 import NewsModal from "@/components/common/NewsModal";
+import { StartScroll, StopScroll } from "@/util/scrollEvent";
 
 const EntirePage = () => {
   const [newsList, setNewsList] = useState<INewsBoxProps[]>([]);
@@ -26,21 +27,10 @@ const EntirePage = () => {
   }, []);
 
   useEffect(() => {
-    if (modalActive) {
-      document.body.style.cssText = `
-      position: fixed; 
-      top: -${window.scrollY}px;
-      overflow-y: scroll;
-      width: 100%;`;
-    }
-    console.log(window.scrollY);
+    StopScroll(modalActive);
 
     return () => {
-      if (modalActive) {
-        const scrollY = document.body.style.top;
-        document.body.style.cssText = "";
-        window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
-      }
+      StartScroll(modalActive);
     };
   }, [modalActive]);
 
