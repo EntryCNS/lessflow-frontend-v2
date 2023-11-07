@@ -18,19 +18,18 @@ const Main = () => {
     "승리 논란",
   ];
 
-  const [articleList,setArticleList] = useState<articleListType[]>([])
+  const [articleList, setArticleList] = useState<articleListType[]>([]);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [articleNum, setArticleNum] = useState<string>();
 
-  useEffect(()=>{
-    axios.get('http://43.202.215.8:8080/article/')
-    .then((res)=>{
-      setArticleList(res.data)
-    })
-    .catch(()=>{
-
-    })
-  },[])
+  useEffect(() => {
+    axios
+      .get("http://43.202.215.8:8080/article/")
+      .then((res) => {
+        setArticleList(res.data);
+      })
+      .catch(() => {});
+  }, []);
 
   return (
     <DefaultTemplate>
@@ -57,7 +56,7 @@ const Main = () => {
                 key={data.id}
                 onClick={():any => {
                   setIsOpen(true);
-                  setArticleNum(data.id)
+                  setArticleNum(data.id);
                 }}
               >
                 <NewsBox

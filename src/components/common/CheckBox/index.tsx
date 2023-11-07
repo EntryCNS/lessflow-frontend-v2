@@ -8,7 +8,7 @@ const CheckBox = ({ context, setState, state }: ICheckBoxProps) => {
     <S.Container onClick={() => setState(!state)}>
       <S.SubContainer>
         <S.CheckBox active={state}>
-          <S.Check src={CheckIcon} alt="" />
+          <S.Check src={CheckIcon} alt="image error" />
         </S.CheckBox>
         <S.Context>{context}</S.Context>
       </S.SubContainer>

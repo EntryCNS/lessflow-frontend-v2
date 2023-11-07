@@ -71,14 +71,14 @@ export const NewsWrapper = styled.div`
 `; */
 
 export const NewsBoxImg = styled.img`
-    width: inherit;
-    height: inherit;
-    border-radius: 15px;
+  width: inherit;
+  height: inherit;
+  border-radius: 15px;
 
-    object-fit: cover;
+  object-fit: cover;
 
-    position: absolute;
-`
+  position: absolute;
+`;
 
 export const NewsText = styled.div`
   width: 100%;
