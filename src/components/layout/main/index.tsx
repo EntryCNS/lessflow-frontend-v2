@@ -30,7 +30,7 @@ const Main = () => {
 
         <S.MainContentBox>
           <Button
-            onClickHandler={() => {}}
+            onClick={() => {}}
             disable={false}
             active={true}
             children={"인기 뉴스"}
