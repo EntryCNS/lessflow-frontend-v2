@@ -5,7 +5,10 @@ export interface articleListType {
 }
 
 export interface articleType {
-    title: string,
-    content: string,
-    thumbnail: string
+    keyword:string,
+    article:{
+        title: string,
+        content: string,
+        thumbnail: string
+    }
 }

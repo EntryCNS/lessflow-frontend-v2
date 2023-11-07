@@ -3,10 +3,11 @@ import * as S from "./style";
 import MainTxtImg from "@/../public/asset/mainTxt.svg";
 import CharacterImg from "../../../../public/asset/character.svg";
 import Button from "../../common/Button";
-import Modal from "./modal";
+import ModalBox from "../../common/modalBox";
 import DefaultTemplate from "@/components/common/Template/DefaultTemplate";
 import axios from "axios";
 import { articleListType } from "./type";
+import NewsBox from "@/components/common/NewsBox";
 
 const Main = () => {
   const NEWSTITLELIST = [
@@ -52,21 +53,23 @@ const Main = () => {
 
           <S.NewsWrapper>
             {articleList.map((data, idx) => (
-              <S.NewsBox
-                key={idx}
-                onClick={() => {
+              <div
+                key={data.id}
+                onClick={():any => {
                   setIsOpen(true);
                   setArticleNum(data.id)
                 }}
               >
-                <S.NewsBoxImg src={data.thumbnail}/>
-
-                <S.NewsText>{data.keyword}</S.NewsText>
-              </S.NewsBox>
+                <NewsBox
+                    id={data.id}
+                    keyword={data.keyword}
+                    thumbnail={data.thumbnail}
+                  />
+              </div>
             ))}
           </S.NewsWrapper>
 
-          <Modal isOpen={isOpen} setIsOpen={setIsOpen} articleNum={articleNum}/>
+          <ModalBox isOpen={isOpen} setIsOpen={setIsOpen} articleNum={articleNum}/>
         </S.MainContentBox>
       </S.MainLayout>
     </DefaultTemplate>
