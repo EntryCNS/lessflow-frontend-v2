@@ -52,15 +52,14 @@ export const MainContentBox = styled.div`
 `;
 
 export const NewsWrapper = styled.div`
-    width: 100%;
-
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 `;
 
 export const NewsBox = styled.div`
-    margin: 1.9vw 0;
+  margin: 1.9vw 0;
 
   width: 16.3vw;
   height: 23.2vw;
@@ -69,14 +68,14 @@ export const NewsBox = styled.div`
 `;
 
 export const NewsBoxImg = styled.img`
-    width: inherit;
-    height: inherit;
-    border-radius: 15px;
+  width: inherit;
+  height: inherit;
+  border-radius: 15px;
 
-    object-fit: cover;
+  object-fit: cover;
 
-    position: absolute;
-`
+  position: absolute;
+`;
 
 export const NewsText = styled.div`
   width: 100%;

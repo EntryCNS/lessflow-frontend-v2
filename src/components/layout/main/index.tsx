@@ -17,19 +17,18 @@ const Main = () => {
     "승리 논란",
   ];
 
-  const [articleList,setArticleList] = useState<articleListType[]>([])
+  const [articleList, setArticleList] = useState<articleListType[]>([]);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [articleNum, setArticleNum] = useState<string>();
 
-  useEffect(()=>{
-    axios.get('http://43.202.215.8:8080/article/')
-    .then((res)=>{
-      setArticleList(res.data)
-    })
-    .catch(()=>{
-
-    })
-  },[])
+  useEffect(() => {
+    axios
+      .get("http://43.202.215.8:8080/article/")
+      .then((res) => {
+        setArticleList(res.data);
+      })
+      .catch(() => {});
+  }, []);
 
   return (
     <DefaultTemplate>
@@ -56,17 +55,21 @@ const Main = () => {
                 key={idx}
                 onClick={() => {
                   setIsOpen(true);
-                  setArticleNum(data.id)
+                  setArticleNum(data.id);
                 }}
               >
-                <S.NewsBoxImg src={data.thumbnail}/>
+                <S.NewsBoxImg src={data.thumbnail} />
 
                 <S.NewsText>{data.keyword}</S.NewsText>
               </S.NewsBox>
             ))}
           </S.NewsWrapper>
 
-          <Modal isOpen={isOpen} setIsOpen={setIsOpen} articleNum={articleNum}/>
+          <Modal
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+            articleNum={articleNum}
+          />
         </S.MainContentBox>
       </S.MainLayout>
     </DefaultTemplate>
