@@ -25,7 +25,7 @@ const EntirePage = () => {
             return;
           }
           copyList.push({ title: pageIdx + "", list: [...value.data] });
-          console.log(pageIdx, value.data, copyList);
+          // console.log(pageIdx, value.data, copyList);
           setNewsList([...newsList, ...copyList]);
         })
         .catch((e) => console.log(e));

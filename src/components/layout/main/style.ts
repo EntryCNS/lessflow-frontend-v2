@@ -48,13 +48,15 @@ export const MainCharacterImg = styled(Image)`
 
 export const MainContentBox = styled.div`
   padding: 3vw 3vw 0 3vw;
-  width: 100%;
+
+  width: 70%;
+  margin: auto;
 `;
 
 export const NewsWrapper = styled.div`
-    padding: 1.9vw 0;
+  padding: 1.9vw 0;
 
-    width: 100%;
+  width: 100%;
 
   display: flex;
   flex-wrap: wrap;
