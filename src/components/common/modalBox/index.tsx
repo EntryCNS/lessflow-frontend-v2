@@ -4,6 +4,7 @@ import DummyImg1 from "../../../../../public/asset/dummy/dummy1.svg";
 import axios from "axios";
 import { articleType } from "../../layout/main/type";
 import NewsBox from "@/components/common/NewsBox";
+import { getArtileInformation, getArtileVideo } from "@/util/apis/EntireApis";
 
 const Modal = ({ isOpen, setIsOpen, articleNum }: any) => {
   const [videoUrl, setVideoUrl] = useState<string>();
@@ -12,15 +13,13 @@ const Modal = ({ isOpen, setIsOpen, articleNum }: any) => {
   const modalOutsideRef = useRef(null);
 
   useEffect(() => {
-    axios
-      .get(`http://43.202.215.8:8080/article/video/${articleNum}`)
+    getArtileVideo(articleNum)
       .then((res) => {
         setVideoUrl(res.data.video);
       })
       .catch(() => {});
 
-    axios
-      .get(`http://43.202.215.8:8080/article/${articleNum}`)
+    getArtileInformation(articleNum)
       .then((res) => {
         setWritingPainting(res.data);
       })
