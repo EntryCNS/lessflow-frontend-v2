@@ -15,27 +15,25 @@ const EntirePage = () => {
   const [pageIndex, setPageIndex] = useState<number>(5);
   const [blockGetNews, setBlockGetNews] = useState<boolean>(false);
 
-  const getListPage = (pageIdx: number) => {
-    if (!blockGetNews) {
-      getArticlePage(pageIdx)
-        .then((value) => {
-          const copyList: IEntireValue[] = [];
-          if (value.data.length === 0) {
-            setBlockGetNews(true);
-            return;
-          }
-          copyList.push({ title: pageIdx + "", list: [...value.data] });
-          // console.log(pageIdx, value.data, copyList);
-          setNewsList([...newsList, ...copyList]);
-        })
-        .catch((e) => console.log(e));
-    } else {
-      return;
-    }
+  const getListPage = async () => {
+    const copyList: IEntireValue[] = [];
+    new Array(pageIndex).fill(1).map((_, i) => {
+      if (!blockGetNews) {
+        getArticlePage(i + 1)
+          .then((value) => {
+            if (value.data.length === 0) {
+              setBlockGetNews(true);
+            }
+            copyList[i] = { title: i + 1 + "", list: [...value.data] };
+            setNewsList([...copyList]);
+          })
+          .catch((e) => console.log(e));
+      }
+    });
   };
 
   useEffect(() => {
-    new Array(pageIndex).fill(1).map((_, i) => getListPage(i + 1));
+    getListPage();
   }, [pageIndex]);
 
   useEffect(() => {
@@ -53,38 +51,29 @@ const EntirePage = () => {
         )}
         <S.MainContainer>
           <>
-            {new Array(pageIndex).fill(0).map((_, idx1) => (
-              <div>
-                <Button disable={false} active onClick={() => {}}>
-                  {"오늘의 뉴스><"}
-                </Button>
-                <S.NewsBoxWrap>
-                  {new Array(5).fill(0).map((_, idx2) => (
-                    <div>
-                      <NewsBox
-                        keyword=""
-                        thumbnail=""
-                        id=""
-                        onClick={() => {
-                          // setModalId(newsList[idx1]);
-                          setModalActive(true);
-                        }}
-                      ></NewsBox>
-                      {/* {newsList[idx1 * 5 + idx2] && (
-                        <NewsBox
-                          keyword={newsList[idx1 * 5 + idx2].keyword}
-                          thumbnail={newsList[idx1 * 5 + idx2].thumbnail}
-                          onClick={() => {
-                            setModalId(newsList[idx1 * 5 + idx2].id);
-                            setModalActive(true);
-                          }}
-                          id={newsList[idx1 * 5 + idx2].id}
-                        />
-                      )} */}
-                    </div>
-                  ))}
-                </S.NewsBoxWrap>
-              </div>
+            {new Array(newsList.length).fill(0).map((_, idx1) => (
+              <>
+                {newsList[idx1] && newsList[idx1].list.length > 0 && (
+                  <S.NewsBoxWrap>
+                    {new Array(newsList[idx1]?.list.length)
+                      .fill(0)
+                      .map((_, idx2) => (
+                        <div>
+                          <NewsBox
+                            keyword={newsList[idx1].list[idx2].keyword}
+                            thumbnail={newsList[idx1].list[idx2].thumbnail}
+                            id={newsList[idx1].list[idx2].id}
+                            createAt={newsList[idx1].list[idx2].createAt}
+                            onClick={() => {
+                              setModalId(newsList[idx1].list[idx2].id);
+                              setModalActive(true);
+                            }}
+                          ></NewsBox>
+                        </div>
+                      ))}
+                  </S.NewsBoxWrap>
+                )}
+              </>
             ))}
           </>
           <button
