@@ -39,7 +39,7 @@ const Main = () => {
         </S.MainBannerBox>
         <S.MainContentBox>
           <Button onClick={() => {}} disable={false} active={true}>
-            오늘의 뉴스
+            오늘의 최신 뉴스
           </Button>
           <S.NewsWrapper>
             {articleList.map((data, idx) => (
