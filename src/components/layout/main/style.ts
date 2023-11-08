@@ -109,3 +109,12 @@ export const NullContext = styled.div`
   height: 300px;
   text-align: center;
 `;
+
+export const DateContext = styled.div`
+  display: inline-block;
+  margin-left: 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.075rem;
+  color: ${({ theme }) => theme.Gray300};
+`;

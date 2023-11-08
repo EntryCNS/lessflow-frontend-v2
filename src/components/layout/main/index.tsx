@@ -41,6 +41,7 @@ const Main = () => {
           <Button onClick={() => {}} disable={false} active={true}>
             오늘의 최신 뉴스
           </Button>
+          <S.DateContext>{getToday()}</S.DateContext>
           <S.NewsWrapper>
             {articleList.length > 0 ? (
               articleList.map((data, idx) => (
