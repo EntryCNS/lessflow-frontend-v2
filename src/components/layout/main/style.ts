@@ -103,3 +103,9 @@ export const NewsText = styled.div`
   bottom: 0;
   z-index: 1;
 `;
+
+export const NullContext = styled.div`
+  width: 100%;
+  height: 50px;
+  text-align: center;
+`;
