@@ -16,11 +16,11 @@ export const getArtileVideo = (id: string) => {
 };
 
 export const getArticlePage = (pageIdx: number) => {
-  const response = API.get(`/article/list/?page=${pageIdx}`);
+  const response = API.get(`/article/list?page=${pageIdx}`);
   return response;
 };
 
 export const getArticleToday = (today: string) => {
-  const response = API.get(`/article/home/?date=${today}`);
+  const response = API.get(`/article/list?page=1&date=${today}`);
   return response;
 };
