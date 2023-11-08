@@ -102,7 +102,7 @@ export const ContextWrap = styled.div`
 export const VideoWrap = styled.div`
   margin-top: 20px;
   width: 100%;
-  height: 70%;
+  height: 90%;
   display: flex;
   justify-content: center;
   align-items: center;

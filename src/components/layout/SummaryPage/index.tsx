@@ -27,7 +27,7 @@ const SuccessInfo = {
 const SummaryPage = () => {
   const [email, setEmail] = useState<string>("");
   const [keyword, setKeyword] = useState<string>("");
-  const [TTSService, setTTSService] = useState<boolean>(false);
+  // const [TTSService, setTTSService] = useState<boolean>(false);
   const [sendEmail, setSendEmail] = useState<boolean>(false);
   const [active, setActive] = useState<boolean>(false);
 
@@ -50,8 +50,8 @@ const SummaryPage = () => {
   };
 
   useEffect(() => {
-    setActive(summaryCheckHandler({ email, keyword, TTSService, sendEmail }));
-  }, [email, keyword, TTSService, sendEmail]);
+    setActive(summaryCheckHandler({ email, keyword, sendEmail }));
+  }, [email, keyword, , sendEmail]);
 
   return (
     <SendTemplate
@@ -80,13 +80,13 @@ const SummaryPage = () => {
             padding="22px 20px"
           />
         </S.InputWrap>
-        <S.CheckBoxWrap>
+        {/* <S.CheckBoxWrap>
           <CheckBox
             context="TTS 서비스를 이용하시겠습니까?"
             state={TTSService}
             setState={setTTSService}
           />
-        </S.CheckBoxWrap>
+        </S.CheckBoxWrap> */}
         <S.CheckBoxWrap>
           <CheckBox
             context="이메일 수신에 동의합니다."

@@ -1,7 +1,6 @@
 interface IProps {
   email: string;
   keyword: string;
-  TTSService: boolean;
   sendEmail: boolean;
 }
 
@@ -12,11 +11,9 @@ const KeywordRegExp = /\s/g;
 export const summaryCheckHandler: ({}: IProps) => boolean = ({
   email,
   keyword,
-  TTSService,
   sendEmail,
 }: IProps) => {
   if (
-    TTSService &&
     sendEmail &&
     EmailRegExp.test(email) &&
     keyword.replace(KeywordRegExp, "") !== ""
