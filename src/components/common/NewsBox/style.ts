@@ -29,10 +29,16 @@ export const TitleBox = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `;
 
 export const Image = styled.img`
   width: 400px;
   height: 400px;
   background-size: cover;
+`;
+
+export const DateContext = styled.p`
+  font-size: 0.75rem;
+  color: white;
 `;
