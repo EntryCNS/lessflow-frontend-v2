@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 export const NewsBoxWrap = styled.div`
-  width: 100%;
+  width: 70%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
   overflow: auto;
+  margin-bottom: 5rem;
 `;
 
 export const NewsContentsWrap = styled.div`
