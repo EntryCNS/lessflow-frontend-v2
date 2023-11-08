@@ -42,19 +42,24 @@ const Main = () => {
             오늘의 최신 뉴스
           </Button>
           <S.NewsWrapper>
-            {articleList.map((data, idx) => (
-              <div key={data.id}>
-                <NewsBox
-                  id={data.id}
-                  keyword={data.keyword}
-                  thumbnail={data.thumbnail}
-                  onClick={(): any => {
-                    setIsOpen(true);
-                    setArticleNum(data.id);
-                  }}
-                />
-              </div>
-            ))}
+            {articleList.length > 0 ? (
+              articleList.map((data, idx) => (
+                <div key={data.id}>
+                  <NewsBox
+                    id={data.id}
+                    keyword={data.keyword}
+                    thumbnail={data.thumbnail}
+                    createAt={data.createAt}
+                    onClick={(): any => {
+                      setIsOpen(true);
+                      setArticleNum(data.id);
+                    }}
+                  />
+                </div>
+              ))
+            ) : (
+              <S.NullContext>최신 뉴스가 없습니다. ㅠㅠ</S.NullContext>
+            )}
           </S.NewsWrapper>
 
           <ModalBox
