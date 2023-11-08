@@ -39,7 +39,7 @@ const Header = () => {
           isActive={pageIdx === 0}
           onClick={() => OnClickHandler({ path: "/" })}
         >
-          인기뉴스보기
+          최신뉴스보기
         </S.ContentsContext>
         <S.ContentsContext
           isActive={pageIdx === 1}
