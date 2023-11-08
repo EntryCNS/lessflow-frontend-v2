@@ -31,7 +31,7 @@ export const HeaderContainer = styled.header`
 `;
 
 export const ContentsWrap = styled.div`
-  width: 600px;
+  width: 450px;
   display: flex;
   justify-content: space-between;
   align-items: center;
