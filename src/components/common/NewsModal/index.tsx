@@ -61,19 +61,23 @@ const NewsModal = ({ id, onClick }: IModalProps) => {
           </S.ExitButton>
           <S.Title>{title}</S.Title>
           <S.ContentsHeader>
-            <S.ContentsHeaderContext
-              isVideo={!isVideo}
-              onClick={() => setIsVideo(false)}
-            >
-              📰 단일 뉴스 기사
-            </S.ContentsHeaderContext>
+            <S.HeaderMidContext modal>
+              <S.ContentsHeaderContext
+                isVideo={!isVideo}
+                onClick={() => setIsVideo(false)}
+              >
+                📰 단일 뉴스 기사
+              </S.ContentsHeaderContext>
+            </S.HeaderMidContext>
             <S.ContextLine />
-            <S.ContentsHeaderContext
-              isVideo={isVideo}
-              onClick={() => setIsVideo(true)}
-            >
-              🎥 단일 뉴스 동영상
-            </S.ContentsHeaderContext>
+            <S.HeaderMidContext modal>
+              <S.ContentsHeaderContext
+                isVideo={isVideo}
+                onClick={() => setIsVideo(true)}
+              >
+                🎥 단일 뉴스 동영상
+              </S.ContentsHeaderContext>
+            </S.HeaderMidContext>
           </S.ContentsHeader>
           {isVideo ? (
             <S.VideoWrap>

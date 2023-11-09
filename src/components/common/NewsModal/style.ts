@@ -15,6 +15,25 @@ const ModalHeaderContextColor = {
   `,
 };
 
+const modalHover = {
+  active: css`
+    &:hover {
+      color: ${({ theme }) => theme.Gray100};
+    }
+    &:active {
+      color: ${({ theme }) => theme.Gray300};
+    }
+  `,
+  none: css`
+    &:hover {
+      color: ${({ theme }) => theme.Normal};
+    }
+    &:active {
+      color: ${({ theme }) => theme.Normal};
+    }
+  `,
+};
+
 export const MainModalContainer = styled.div<IModalStyle>`
   top: -${({ top }) => top}px;
   position: fixed;
@@ -87,6 +106,10 @@ export const ContentsHeaderContext = styled.p<IModalStyle>`
   font-weight: 600;
   ${({ isVideo }) =>
     isVideo ? ModalHeaderContextColor.active : ModalHeaderContextColor.none}};
+`;
+
+export const HeaderMidContext = styled.p<{ modal: boolean }>`
+  ${({ modal }) => (modal ? modalHover.active : modalHover.none)}
 `;
 
 export const Image = styled.img`
