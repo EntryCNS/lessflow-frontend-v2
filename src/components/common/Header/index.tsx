@@ -33,7 +33,11 @@ const Header = () => {
 
   return (
     <S.HeaderContainer>
-      <S.LogoImage src={Logo} alt="image error" />
+      <S.LogoImage
+        src={Logo}
+        alt="image error"
+        onClick={() => router.push("/")}
+      />
       <S.ContentsWrap>
         <S.ContentsContext
           isActive={pageIdx === 0}
