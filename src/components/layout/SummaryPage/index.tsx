@@ -45,6 +45,8 @@ const SummaryPage = () => {
         setIsSuccess(true);
       })
       .catch((e) => {
+        alert("뉴스가 없습니다!");
+        window.location.reload();
         console.log(e);
       });
   };
