@@ -66,7 +66,7 @@ const Modal = ({ isOpen, setIsOpen, articleNum }: any) => {
                   setIsText(true);
                 }}
               >
-                📰 단일 뉴스 기사{" "}
+                📰 단일 뉴스 기사
               </S.MidTitle>
               <S.MidDevideLine />
               <S.MidTitle
@@ -94,9 +94,9 @@ const Modal = ({ isOpen, setIsOpen, articleNum }: any) => {
                   height="99%"
                   src={videoUrl}
                   title="news video"
-                  frameborder="0"
+                  //frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
+                  //allowfullscreen
                 />
               )}
             </S.MainContent>
