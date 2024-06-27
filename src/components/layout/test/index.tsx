@@ -33,7 +33,7 @@ const Test = () => {
         <p>children으로 문자열 혹은 컴포넌트를 넣으실 수 있습니다.</p>
         <p>그외 width, height 등으로 커스텀 하실 수 있습니다. </p>
         <div style={{ marginTop: "1rem" }}>
-          <Button disable={!button} active={button} onClickHandler={onClick}>
+          <Button disable={!button} active={button} onClick={onClick}>
             단일 뉴스 생성
           </Button>
         </div>
