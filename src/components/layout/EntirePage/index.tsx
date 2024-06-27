@@ -57,7 +57,7 @@ const EntirePage = () => {
                   {new Array(newsList[idx1]?.list.length)
                     .fill(0)
                     .map((_, idx2) => (
-                      <div>
+                      <div key={idx2}>
                         <NewsBox
                           keyword={newsList[idx1].list[idx2].keyword}
                           thumbnail={newsList[idx1].list[idx2].thumbnail}
