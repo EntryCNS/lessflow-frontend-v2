@@ -14,7 +14,7 @@ export const CheckBoxWrap = styled.div`
 `;
 
 export const ButtonWrap = styled.div`
-  width: 400px;
+  width: 100%;
   display: flex;
   justify-content: end;
   margin-top: 40px;

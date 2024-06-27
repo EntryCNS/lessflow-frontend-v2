@@ -57,12 +57,12 @@ const Header = () => {
         >
           뉴스생성하기
         </S.ContentsContext>
-        {/* <S.ContentsContext
+        <S.ContentsContext
           isActive={pageIdx === 3}
           onClick={() => OnClickHandler({ path: "/susbscribe" })}
         >
           뉴스구독하기
-        </S.ContentsContext> */}
+        </S.ContentsContext>
       </S.ContentsWrap>
     </S.HeaderContainer>
   );
